@@ -91,16 +91,25 @@ const zombieFighters = [
 
 
 const handleAddFighter = (newTeam) => {
+  
   const zombieTeam = [...team, newTeam] 
   setTeam(zombieTeam); 
+
+// const remainingMoney = money - newTeam.price;
+// setMoney(remainingMoney)
+setMoney(money - newTeam.price)
+
+const updateZombieFighters = zombieFighters.filter(( fighter ) => fighter.id !== newTeam.id);
+setZombieFighters(updatedFighters);
+// console.log(zombieFighters);
 }; 
 
-zombieTeam.map((zombie) => {
-    const newMoney = () => {
-      setMoney(prevMoney => prevMoney - zombie.price); 
-      newMoney(); 
-    }; 
-});
+// zombieTeam.map((zombie) => {
+//     const newMoney = () => {
+//       setMoney(prevMoney => prevMoney - zombie.price); 
+//       newMoney(); 
+//     }; 
+// });
 
 
   return (
